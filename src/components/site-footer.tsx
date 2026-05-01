@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export function SiteFooter() {
   return (
@@ -20,10 +21,9 @@ export function SiteFooter() {
           Studio.
         </h2>
         <p className="text-[#e3e3e3] mt-4">
-          © 2026 DripCode Studio.
-          <br />
-          Branding • Design • Code
+          © {new Date().getFullYear()} DripCode Studio tous droits réservés.
         </p>
+        <p className="text-[#e3e3e3] mt-4">Branding • Design • Code</p>
       </motion.div>
       <motion.div
         className="flex flex-col sm:flex-row gap-12 sm:gap-16"
@@ -34,25 +34,41 @@ export function SiteFooter() {
       >
         <div className="flex flex-col gap-2">
           <span className="font-bold mb-2 text-[#e3e3e3]">Réseaux</span>
-          <a href="#" className="hover:text-[#ED5B53] transition-colors">
+          <Link
+            href="https://www.instagram.com/dripcodestudio/"
+            target="_blank"
+            className="hover:text-[#ED5B53] transition-colors"
+          >
             Instagram
-          </a>
-          <a href="#" className="hover:text-[#ED5B53] transition-colors">
+          </Link>
+          <Link
+            href="https://www.linkedin.com/company/dripcodestudio"
+            target="_blank"
+            className="hover:text-[#ED5B53] transition-colors"
+          >
             LinkedIn
-          </a>
-          <a href="#" className="hover:text-[#ED5B53] transition-colors">
+          </Link>
+          <Link
+            href="https://twitter.com/dripcodestudio"
+            target="_blank"
+            className="hover:text-[#ED5B53] transition-colors"
+          >
             Twitter
-          </a>
+          </Link>
         </div>
         <div className="flex flex-col gap-2">
           <span className="font-bold mb-2 text-[#e3e3e3]">Contact</span>
           <a
-            href="mailto:hello@dripcode.studio"
+            href="mailto:dripcodestudio@gmail.com"
             className="hover:text-[#ED5B53] transition-colors"
           >
-            hello@dripcode.studio
+            dripcodestudio@gmail.com
           </a>
-          <a href="#" className="hover:text-[#ED5B53] transition-colors">
+          <a
+            href="https://calendly.com/dripcodestudio/30min"
+            target="_blank"
+            className="hover:text-[#ED5B53] transition-colors"
+          >
             Prendre rendez-vous
           </a>
         </div>
