@@ -137,7 +137,7 @@ export default function Home() {
             </h2>
             <p className="mt-4 font-sans text-lg max-w-100 opacity-90">
               Direction artistique, graphisme et productions audiovisuelles.
-              L'essence même de l'esthétique.
+              L&apos;essence même de l&apos;esthétique.
             </p>
             <ul className="mt-12 list-none font-sans text-xl font-medium leading-loose">
               {[
@@ -168,7 +168,7 @@ export default function Home() {
             </h2>
             <p className="mt-4 font-sans text-lg max-w-100 opacity-90">
               Développement fullstack, solutions SaaS et cybersécurité.
-              Construire l'architecture de demain.
+              Construire l&apos;architecture de demain.
             </p>
             <ul className="mt-12 list-none font-sans text-xl font-medium leading-loose">
               {[
@@ -206,7 +206,7 @@ export default function Home() {
           <p className="text-xl text-[#e3e3e3]">
             Des containers aménagés au style authentique Dripcode studio. Des
             espaces conçus pour connecter, créer et collaborer, disponibles à
-            l'achat pour entreprises, ASBL et PME.
+            l&apos;achat pour entreprises, ASBL et PME.
           </p>
         </div>
       </section>
