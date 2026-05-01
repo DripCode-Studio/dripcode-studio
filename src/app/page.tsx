@@ -49,8 +49,8 @@ export default function Home() {
     <div className="bg-[#161616] text-white font-sans overflow-x-hidden">
       {/* Navbar */}
       <nav className="fixed top-0 w-full flex justify-between items-center px-8 md:px-16 z-100 transition-all duration-300 py-4">
-        <a href="#" className="h-20 md:h-[100px] flex items-center">
-          <img
+        <a href="#" className="h-20 md:h-25 flex items-center">
+          <Image
             src="/text%20logo%20SVG/Logo%20texte+rouge%20blanc.svg"
             alt="DripCode Studio Logo"
             className="h-full w-auto"
@@ -69,7 +69,7 @@ export default function Home() {
                 className="font-['EKBaumerHeadline',sans-serif] font-normal text-xs uppercase tracking-[0.15em] relative pb-1 group"
               >
                 {item}
-                <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-white transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-px bg-white transition-all duration-300 group-hover:w-full"></span>
               </a>
             ),
           )}
@@ -84,7 +84,7 @@ export default function Home() {
             "linear-gradient(rgba(22, 22, 22, 0.6), rgba(22, 22, 22, 0.8)), url('/assets/images/hero-bg.jpg')",
         }}
       >
-        <div className="max-w-[1200px] mx-auto w-full flex flex-col gap-4 relative z-10 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 ease-out">
+        <div className="max-w-300 mx-auto w-full flex flex-col gap-4 relative z-10 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 ease-out">
           <h1 className="text-[clamp(4rem,7vw,6.5rem)] font-['EKBaumerHeadline',sans-serif] font-bold italic leading-none tracking-tight mt-8 -ml-1">
             Votre studio{" "}
             <span className="font-['PMingLiU',serif] font-normal not-italic inline-block -translate-y-2">
@@ -94,14 +94,12 @@ export default function Home() {
           <h2 className="font-['EKBaumerHeadline',sans-serif] font-medium text-3xl mt-20 -mb-2 text-white">
             Transforme ton idée en réalité
           </h2>
-          <p className="max-w-[600px] text-[1.1rem] text-[#e3e3e3]">
-            Dripcode IH est une organisation de recherche dans le domaine
-            <br />
-            de l’intelligence humaine spécialisée dans le déploiement d’IH,
-            <br />
-            sûre et bénéfique à travers des systèmes avancés issu des villages
-            <br />
-            En mettant l’accent sur l'innovation, la transparence et fiabilité
+          <p className="max-w-200 text-[1.1rem] text-[#e3e3e3]">
+            Nous sommes un studio créatif ⚓ basé entre le Canada et Bruxelles,
+            spécialisé dans la création de projets modernes et performants qui
+            aident les entreprises à prospérer dans le monde numérique. Notre
+            mission est de fournir des solutions propres, évolutives, alliant
+            style et performance au premier plan.
           </p>
           <div className="flex gap-6 mt-10">
             <a
@@ -134,7 +132,7 @@ export default function Home() {
                 Artisan
               </span>
             </h2>
-            <p className="mt-4 font-sans text-lg max-w-[400px] opacity-90">
+            <p className="mt-4 font-sans text-lg max-w-100 opacity-90">
               Direction artistique, graphisme et productions audiovisuelles.
               L'essence même de l'esthétique.
             </p>
@@ -147,7 +145,7 @@ export default function Home() {
               ].map((item, i) => (
                 <li
                   key={i}
-                  className="flex items-center gap-4 before:content-[''] before:block before:w-6 before:h-[1px] before:bg-current"
+                  className="flex items-center gap-4 before:content-[''] before:block before:w-6 before:h-px before:bg-current"
                 >
                   {item}
                 </li>
@@ -165,7 +163,7 @@ export default function Home() {
                 Architecte
               </span>
             </h2>
-            <p className="mt-4 font-sans text-lg max-w-[400px] opacity-90">
+            <p className="mt-4 font-sans text-lg max-w-100 opacity-90">
               Développement fullstack, solutions SaaS et cybersécurité.
               Construire l'architecture de demain.
             </p>
@@ -178,7 +176,7 @@ export default function Home() {
               ].map((item, i) => (
                 <li
                   key={i}
-                  className="flex items-center gap-4 before:content-[''] before:block before:w-6 before:h-[1px] before:bg-current"
+                  className="flex items-center gap-4 before:content-[''] before:block before:w-6 before:h-px before:bg-current"
                 >
                   {item}
                 </li>
@@ -193,7 +191,7 @@ export default function Home() {
         id="studio"
         className="py-32 px-8 md:px-16 bg-[#161616] flex items-center justify-center text-center relative min-h-[80vh]"
       >
-        <div className="max-w-[800px] animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 ease-out">
+        <div className="max-w-200 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 ease-out">
           <div className="text-[#ED5B53] font-['Zabal',sans-serif] uppercase text-sm tracking-[2px] mb-4 inline-block border border-[#ED5B53] px-4 py-2 rounded-full">
             À venir : Partie 2
           </div>
