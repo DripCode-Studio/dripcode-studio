@@ -1,10 +1,19 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export function SiteFooter() {
   return (
     <footer
       id="contact"
       className="p-8 md:p-16 border-t border-white/10 flex flex-col md:flex-row justify-between items-start gap-12 md:gap-0"
     >
-      <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 ease-out">
+      <motion.div
+        initial={{ opacity: 0, y: 32 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9, ease: [0.25, 1, 0.5, 1] }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <h2 className="text-3xl font-['EKBaumerHeadline',sans-serif] mb-4">
           DripCode
           <br />
@@ -15,8 +24,14 @@ export function SiteFooter() {
           <br />
           Branding • Design • Code
         </p>
-      </div>
-      <div className="flex flex-col sm:flex-row gap-12 sm:gap-16 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 delay-200 ease-out">
+      </motion.div>
+      <motion.div
+        className="flex flex-col sm:flex-row gap-12 sm:gap-16"
+        initial={{ opacity: 0, y: 32 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9, delay: 0.15, ease: [0.25, 1, 0.5, 1] }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <div className="flex flex-col gap-2">
           <span className="font-bold mb-2 text-[#e3e3e3]">Réseaux</span>
           <a href="#" className="hover:text-[#ED5B53] transition-colors">
@@ -41,7 +56,7 @@ export function SiteFooter() {
             Prendre rendez-vous
           </a>
         </div>
-      </div>
+      </motion.div>
     </footer>
   );
 }

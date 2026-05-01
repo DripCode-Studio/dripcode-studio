@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 const dripServices = [
   "Visual Branding",
   "Direction Artistique",
@@ -18,8 +22,18 @@ export function ServicesSplit() {
       id="services"
       className="grid grid-cols-1 md:grid-cols-2 min-h-screen"
     >
-      <article className="split-side bg-[#FFD600] text-[#161616] flex flex-col justify-center p-8 md:p-16 relative overflow-hidden transition-all duration-500 ease-out min-h-[50vh]">
-        <div className="relative z-10 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 delay-100 ease-out">
+      <motion.article
+        className="split-side bg-[#FFD600] text-[#161616] flex flex-col justify-center p-8 md:p-16 relative overflow-hidden transition-transform duration-500 ease-out min-h-[50vh]"
+        whileHover={{ scale: 1.02, zIndex: 10 }}
+        transition={{ type: "spring", stiffness: 180, damping: 16 }}
+      >
+        <motion.div
+          className="relative z-10"
+          initial={{ opacity: 0, y: 32 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.1, ease: [0.25, 1, 0.5, 1] }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
           <h2 className="font-['PMingLiU',serif] text-[clamp(3rem,6vw,5rem)] leading-none">
             Drip/{" "}
             <span className="font-sans text-[0.4em] font-normal opacity-90 align-middle ml-2">
@@ -40,11 +54,21 @@ export function ServicesSplit() {
               </li>
             ))}
           </ul>
-        </div>
-      </article>
+        </motion.div>
+      </motion.article>
 
-      <article className="split-side bg-[#304CD3] text-white flex flex-col justify-center p-8 md:p-16 relative overflow-hidden transition-all duration-500 ease-out min-h-[50vh]">
-        <div className="relative z-10 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 delay-200 ease-out">
+      <motion.article
+        className="split-side bg-[#304CD3] text-white flex flex-col justify-center p-8 md:p-16 relative overflow-hidden transition-transform duration-500 ease-out min-h-[50vh]"
+        whileHover={{ scale: 1.02, zIndex: 10 }}
+        transition={{ type: "spring", stiffness: 180, damping: 16 }}
+      >
+        <motion.div
+          className="relative z-10"
+          initial={{ opacity: 0, y: 32 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.2, ease: [0.25, 1, 0.5, 1] }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
           <h2 className="font-['Zabal',sans-serif] text-[clamp(3rem,6vw,5rem)] leading-none">
             &lt;Code&gt;{" "}
             <span className="font-sans text-[0.4em] font-normal opacity-90 align-middle ml-2">
@@ -65,8 +89,8 @@ export function ServicesSplit() {
               </li>
             ))}
           </ul>
-        </div>
-      </article>
+        </motion.div>
+      </motion.article>
     </section>
   );
 }

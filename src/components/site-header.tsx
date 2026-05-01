@@ -1,9 +1,19 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export function SiteHeader() {
   return (
     <header className="min-h-screen flex flex-col justify-center px-8 md:px-16 relative bg-[#161616] overflow-hidden">
       <div className="absolute inset-0 bg-[url('/assets/images/hero-bg.jpg')] bg-cover bg-center"></div>
       <div className="absolute inset-0 bg-gradient-to-b from-[#161616]/60 to-[#161616]/80"></div>
-      <div className="max-w-[1200px] mx-auto w-full flex flex-col gap-4 relative z-10 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 ease-out">
+      <motion.div
+        className="max-w-[1200px] mx-auto w-full flex flex-col gap-4 relative z-10"
+        initial={{ opacity: 0, y: 32 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9, ease: [0.25, 1, 0.5, 1] }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <h1 className="text-[clamp(4rem,7vw,6.5rem)] font-['EKBaumerHeadline',sans-serif] font-bold italic leading-none tracking-tight mt-8 -ml-1">
           Votre studio{" "}
           <span className="font-['PMingLiU',serif] font-normal not-italic inline-block -translate-y-2">
@@ -37,7 +47,7 @@ export function SiteHeader() {
             Portfolio
           </a>
         </div>
-      </div>
+      </motion.div>
     </header>
   );
 }
