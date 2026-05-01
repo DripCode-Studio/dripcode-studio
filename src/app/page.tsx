@@ -51,9 +51,12 @@ export default function Home() {
       <nav className="fixed top-0 w-full flex justify-between items-center px-8 md:px-16 z-100 transition-all duration-300 py-4">
         <a href="#" className="h-20 md:h-25 flex items-center">
           <Image
-            src="/text%20logo%20SVG/Logo%20texte+rouge%20blanc.svg"
+            src="/assets/main-logo.svg"
             alt="DripCode Studio Logo"
+            width={220}
+            height={80}
             className="h-full w-auto"
+            priority
           />
         </a>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 hidden md:flex gap-10 bg-[#282828]/70 backdrop-blur-md px-10 py-4 items-center">
