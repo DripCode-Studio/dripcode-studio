@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export function SiteHeader() {
   return (
-    <header className="min-h-screen flex flex-col justify-center px-8 md:px-16 relative bg-[#161616] overflow-hidden">
+    <header className="min-h-screen flex flex-col justify-center px-8 md:px-16 relative bg-[#161616] overflow-hidden pt-24 md:pt-28">
       <div className="absolute inset-0 bg-[url('/assets/images/hero-bg.jpg')] bg-cover bg-center"></div>
       <div className="absolute inset-0 bg-linear-to-b from-[#161616]/60 to-[#161616]/80"></div>
       <motion.div
