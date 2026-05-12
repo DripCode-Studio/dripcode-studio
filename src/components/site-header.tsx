@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export function SiteHeader() {
   return (
-    <header className="min-h-screen flex flex-col justify-center px-8 md:px-16 relative bg-[#161616] overflow-hidden">
+    <header className="min-h-screen flex flex-col justify-center px-8 md:px-16 relative bg-[#161616] overflow-hidden pt-24 md:pt-28">
       <div className="absolute inset-0 bg-[url('/assets/images/hero-bg.jpg')] bg-cover bg-center"></div>
       <div className="absolute inset-0 bg-linear-to-b from-[#161616]/60 to-[#161616]/80"></div>
       <motion.div
@@ -21,14 +21,11 @@ export function SiteHeader() {
           </span>
         </h1>
         <h2 className="font-['EKBaumerHeadline',sans-serif] font-medium text-3xl mt-20 -mb-2 text-white">
-          Transforme ton idée en réalité
+          Votre studio créatif nouvelle génération
         </h2>
         <p className="max-w-150 text-[1.1rem] text-[#e3e3e3]">
-          Nous sommes un studio créatif ⚓ basé entre le Canada et Bruxelles,
-          spécialisé dans la création de projets modernes et performants qui
-          aident les entreprises à prospérer dans le monde numérique. Notre
-          mission est de fournir des solutions propres, évolutives, alliant
-          style et performance au premier plan.
+          Design, technologie et innovation réunis pour construire des
+          expériences numériques uniques.
         </p>
         <div className="flex flex-col sm:flex-row gap-6 mt-10">
           <a

@@ -19,7 +19,7 @@ export function TeaserSection() {
           À venir : Partie 2
         </div>
         <h2 className="text-[clamp(3rem,5vw,5rem)] font-['EKBaumerHeadline',sans-serif] font-medium mb-8 leading-tight">
-          Ateliers Créatifs
+          Studio Créatifs
         </h2>
         <p className="text-xl text-[#e3e3e3]">
           Des containers aménagés au style authentique Dripcode studio. Des
