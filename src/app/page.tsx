@@ -1,3 +1,4 @@
+import { AboutSection } from "@/components/about-section";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { SiteNavbar } from "@/components/site-navbar";
@@ -9,6 +10,7 @@ export default function Home() {
     <div className="bg-[#161616] text-white font-sans overflow-x-hidden">
       <SiteNavbar />
       <SiteHeader />
+      <AboutSection />
       <ServicesSplit />
       <TeaserSection />
       <SiteFooter />
