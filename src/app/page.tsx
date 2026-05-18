@@ -1,4 +1,5 @@
 import { AboutSection } from "@/components/about-section";
+import { CalFloatingButton } from "@/components/cal-floating-button";
 import { ContactSection } from "@/components/contact-section";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -16,6 +17,7 @@ export default function Home() {
       <TeaserSection />
       <ContactSection />
       <SiteFooter />
+      <CalFloatingButton />
     </div>
   );
 }
