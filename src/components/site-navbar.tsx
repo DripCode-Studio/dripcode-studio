@@ -17,13 +17,16 @@ export function SiteNavbar() {
 
   return (
     <nav className="fixed top-0 w-full flex justify-between items-center px-8 md:px-16 z-100 transition-all duration-300 py-4 bg-[#161616]/60 backdrop-blur-md md:bg-transparent md:backdrop-blur-none">
-      <a href="#" className="h-20 md:h-25 flex items-center relative z-10">
+      <a
+        href="#"
+        className="flex items-center relative z-10 overflow-hidden rounded-2xl h-20 md:h-22.5"
+      >
         <Image
           src="/assets/main-logo.svg"
           alt="DripCode Studio Logo"
           width={220}
           height={80}
-          className="h-full w-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]"
+          className="h-full w-auto object-cover"
           priority
         />
       </a>
