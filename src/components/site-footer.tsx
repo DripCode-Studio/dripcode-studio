@@ -10,9 +10,15 @@ const usefulLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
+const socials = [
+  { label: "Instagram", href: "https://www.instagram.com/dripcodestudio/" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/dripcodestudio" },
+  { label: "X (Twitter)", href: "https://twitter.com/dripcodestudio" },
+];
+
 const legalLinks = [
-  { label: "Mentions l&eacute;gales", href: "/mentions-legales" },
-  { label: "Politique de confidentialit&eacute;", href: "/privacy" },
+  { label: "Mentions légales", href: "/mentions-legales" },
+  { label: "Politique de confidentialité", href: "/privacy" },
 ];
 
 export function SiteFooter() {
@@ -21,7 +27,7 @@ export function SiteFooter() {
       <div className="px-8 md:px-16 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <motion.div
-            className="md:col-span-2"
+            className=""
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.25, 1, 0.5, 1] }}
@@ -72,13 +78,55 @@ export function SiteFooter() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
               duration: 0.9,
+              delay: 0.15,
+              ease: [0.25, 1, 0.5, 1],
+            }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <span className="font-bold uppercase text-xs tracking-[2px] text-[#e3e3e3] block mb-4">
+              Réseaux sociaux
+            </span>
+            <ul className="space-y-3 mb-6">
+              {socials.map((s) => (
+                <li key={s.label}>
+                  <a
+                    href={s.href}
+                    target="_blank"
+                    className="text-sm text-[#e3e3e3] hover:text-[#ED5B53] transition-colors"
+                  >
+                    {s.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <span className="font-bold uppercase text-xs tracking-[2px] text-[#e3e3e3] block mb-4">
+              Rendez-vous
+            </span>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href="https://calendly.com/dripcodestudio/30min"
+                  target="_blank"
+                  className="text-sm text-[#ED5B53] underline underline-offset-4 hover:text-[#ED5B53]/80 transition-colors font-medium"
+                >
+                  Prendre rendez-vous
+                </a>
+              </li>
+            </ul>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.9,
               delay: 0.2,
               ease: [0.25, 1, 0.5, 1],
             }}
             viewport={{ once: true, amount: 0.3 }}
           >
             <span className="font-bold uppercase text-xs tracking-[2px] text-[#e3e3e3] block mb-4">
-              L&eacute;gal
+              Légal
             </span>
             <ul className="space-y-3">
               {legalLinks.map((link) => (
