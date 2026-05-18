@@ -1,4 +1,5 @@
 import { AboutSection } from "@/components/about-section";
+import { ContactSection } from "@/components/contact-section";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { SiteNavbar } from "@/components/site-navbar";
@@ -13,6 +14,7 @@ export default function Home() {
       <AboutSection />
       <ServicesSplit />
       <TeaserSection />
+      <ContactSection />
       <SiteFooter />
     </div>
   );
