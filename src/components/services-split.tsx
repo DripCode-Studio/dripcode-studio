@@ -48,125 +48,199 @@ const codeServices = [
   },
 ];
 
-function ServiceCard({
+function ServiceItem({
   id,
   title,
   desc,
   theme,
-  index,
 }: {
   id: string;
   title: string;
   desc: string;
   theme: "drip" | "code";
-  index: number;
 }) {
   const isDrip = theme === "drip";
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.1 * index, ease: "easeOut" }}
-      viewport={{ once: true, amount: 0.3 }}
-      className={`group relative p-6 md:p-8 rounded-2xl transition-all duration-500 ${
-        isDrip
-          ? "bg-[#161616]/10 hover:bg-[#161616]/20"
-          : "bg-white/5 hover:bg-white/10"
-      }`}
+    <div
+      className={`group grid grid-cols-[48px_1fr] items-start gap-0 py-7 px-6 md:px-12 border-b border-white/10 relative cursor-default transition-colors duration-200 hover:bg-white/[0.025]`}
     >
-      <div className="flex items-start gap-5">
-        <span
-          className={`font-['Zabal',sans-serif] text-3xl font-bold leading-none mt-1 ${
-            isDrip ? "text-[#161616]/30" : "text-white/20"
+      <div
+        className={`absolute left-0 top-0 bottom-0 w-[2px] origin-bottom scale-y-0 transition-transform duration-300 ${
+          isDrip ? "bg-[#ED5B53]" : "bg-[#7B9FFF]"
+        } group-hover:scale-y-100`}
+      />
+      <span
+        className={`font-mono text-[10px] font-bold tracking-[0.05em] pt-[3px] transition-colors duration-250 ${
+          isDrip
+            ? "text-[#ED5B53]/35 group-hover:text-[#ED5B53]"
+            : "text-[#7B9FFF]/35 group-hover:text-[#7B9FFF]"
+        }`}
+      >
+        {id}
+      </span>
+      <div>
+        <p
+          className={`font-['EKBaumerHeadline',sans-serif] text-base font-bold transition-colors duration-250 ${
+            isDrip
+              ? "text-white group-hover:text-[#ED5B53]"
+              : "text-white group-hover:text-[#7B9FFF]"
           }`}
         >
-          {id}
-        </span>
-        <div className="flex-1">
-          <h3
-            className={`text-xl font-bold mb-2 ${
-              isDrip ? "font-sans" : "font-['Zabal',sans-serif]"
-            }`}
-          >
-            {title}
-          </h3>
-          <p
-            className={`text-sm leading-relaxed ${
-              isDrip ? "text-[#161616]/70" : "text-white/60"
-            }`}
-          >
-            {desc}
-          </p>
-        </div>
+          {title}
+        </p>
+        <p className="text-[13px] leading-[1.7] text-white/42 font-light mt-[7px]">
+          {desc}
+        </p>
       </div>
-      <div
-        className={`absolute bottom-0 left-6 right-6 h-px scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left ${
-          isDrip ? "bg-[#161616]/30" : "bg-white/30"
-        }`}
-      ></div>
-    </motion.div>
+    </div>
   );
 }
 
 export function ServicesSplit() {
   return (
-    <section
-      id="services"
-      className="grid grid-cols-1 md:grid-cols-2 min-h-screen"
-    >
-      <motion.article className="bg-[#FFD600] text-[#161616] flex flex-col justify-center p-8 md:p-16 relative overflow-hidden min-h-[50vh]">
-        <motion.div
-          className="relative z-10 max-w-lg"
-          initial={{ opacity: 0, y: 32 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: [0.25, 1, 0.5, 1] }}
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          <h2 className="font-['PMingLiU',serif] text-[clamp(3rem,6vw,5rem)] leading-none">
-            Drip/{" "}
-            <span className="font-sans text-[0.4em] font-normal opacity-90 align-middle ml-2">
-              Artisan
-            </span>
-          </h2>
-          <p className="mt-4 font-sans text-base max-w-[400px] opacity-80">
-            Direction artistique, graphisme et productions audiovisuelles.
-            L&apos;essence même de l&apos;esthétique.
+    <section id="services" className="bg-[#161616] text-white">
+      {/* Header */}
+      <motion.div
+        initial={{ opacity: 0, y: 28 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        viewport={{ once: true, amount: 0.3 }}
+        className="px-6 md:px-16 pt-20 md:pt-28 pb-0 flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-10"
+      >
+        <div>
+          <p className="font-mono text-[11px] tracking-[0.22em] text-white/38 uppercase flex items-center gap-2.5 mb-4">
+            <span className="inline-block w-7 h-px bg-[#ED5B53]" />
+            Nos Services
           </p>
-        </motion.div>
+          <h2 className="font-['EKBaumerHeadline',sans-serif] text-[clamp(40px,6vw,80px)] font-bold leading-[0.92] tracking-[-0.03em]">
+            Deux
+            <br />
+            piliers.
+            <br />
+            <span className="text-[#ED5B53]">Un studio.</span>
+          </h2>
+        </div>
+        <p className="max-w-[340px] text-[15px] leading-[1.75] text-white/38 font-light self-start md:self-end pb-2">
+          Entre direction artistique et architecture logicielle, DripCode Studio
+          construit des expériences numériques qui durent — élégantes,
+          performantes, évolutives.
+        </p>
+      </motion.div>
 
-        <div className="mt-12 flex flex-col gap-3 relative z-10">
-          {dripServices.map((s, i) => (
-            <ServiceCard key={s.id} {...s} theme="drip" index={i} />
+      {/* Divider */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+        viewport={{ once: true }}
+        className="mx-6 md:mx-16 mt-16 h-px bg-white/10 relative"
+      >
+        <span className="absolute right-0 top-[-7px] bg-[#161616] pl-3 font-mono text-[10px] text-white/38">
+          {/* /* nos services */}
+        </span>
+      </motion.div>
+
+      {/* Grid */}
+      <motion.div
+        initial={{ opacity: 0, y: 28 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+        viewport={{ once: true }}
+        className="mx-6 md:mx-16 grid grid-cols-1 md:grid-cols-2 border-x border-white/10"
+      >
+        {/* LEFT: DRIP */}
+        <div className="border-b md:border-b-0 md:border-r border-white/10 relative">
+          <div className="p-6 md:px-12 md:py-12 pb-8 md:pb-10 border-b border-white/10 relative overflow-hidden group/pillar">
+            <div className="absolute inset-0 opacity-0 transition-opacity duration-500 bg-[radial-gradient(ellipse_at_20%_50%,rgba(237,91,83,0.07)_0%,transparent_70%)] group-hover/pillar:opacity-100" />
+            <div className="relative z-10">
+              <div className="inline-flex items-center gap-1.5 font-mono text-[10px] tracking-[0.14em] uppercase px-3 py-1 rounded-[2px] mb-6 bg-[#ED5B53]/10 text-[#ED5B53] border border-[#ED5B53]/20">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#ED5B53]" />
+                L&apos;artisan visuel
+              </div>
+              <h3 className="font-['EKBaumerHeadline',sans-serif] text-[clamp(32px,4vw,42px)] font-bold leading-none tracking-[-0.02em] text-[#ED5B53] mb-3">
+                Drip/
+              </h3>
+              <p className="font-['EKBaumerHeadline',sans-serif] text-[13px] font-normal text-white/38 tracking-[0.04em] uppercase mb-4">
+                Artisan
+              </p>
+              <p className="text-[14px] leading-[1.7] text-white/50 font-light max-w-[88%]">
+                Direction artistique, graphisme et productions audiovisuelles.
+                L&apos;essence même de l&apos;esthétique.
+              </p>
+            </div>
+          </div>
+          {dripServices.map((s) => (
+            <ServiceItem key={s.id} {...s} theme="drip" />
           ))}
         </div>
-      </motion.article>
 
-      <motion.article className="bg-[#304CD3] text-white flex flex-col justify-center p-8 md:p-16 relative overflow-hidden min-h-[50vh]">
-        <motion.div
-          className="relative z-10 max-w-lg"
-          initial={{ opacity: 0, y: 32 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.1, ease: [0.25, 1, 0.5, 1] }}
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          <h2 className="font-['Zabal',sans-serif] text-[clamp(3rem,6vw,5rem)] leading-none">
-            &lt;Code&gt;{" "}
-            <span className="font-sans text-[0.4em] font-normal opacity-90 align-middle ml-2">
-              Architecte
-            </span>
-          </h2>
-          <p className="mt-4 font-sans text-base max-w-[400px] opacity-80">
-            Développement fullstack, solutions SaaS et cybersécurité. Construire
-            l&apos;architecture de demain.
-          </p>
-        </motion.div>
-
-        <div className="mt-12 flex flex-col gap-3 relative z-10">
-          {codeServices.map((s, i) => (
-            <ServiceCard key={s.id} {...s} theme="code" index={i} />
+        {/* RIGHT: CODE */}
+        <div className="relative">
+          <div className="p-6 md:px-12 md:py-12 pb-8 md:pb-10 border-b border-white/10 relative overflow-hidden group/pillar">
+            <div className="absolute inset-0 opacity-0 transition-opacity duration-500 bg-[radial-gradient(ellipse_at_80%_50%,rgba(123,159,255,0.10)_0%,transparent_70%)] group-hover/pillar:opacity-100" />
+            <div className="relative z-10">
+              <div className="inline-flex items-center gap-1.5 font-mono text-[10px] tracking-[0.14em] uppercase px-3 py-1 rounded-[2px] mb-6 bg-[#7B9FFF]/12 text-[#7B9FFF] border border-[#7B9FFF]/25">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#7B9FFF]" />
+                L&apos;architecte technique
+              </div>
+              <h3 className="font-mono text-[clamp(28px,3.5vw,34px)] font-bold leading-none text-[#7B9FFF] mb-3">
+                &lt;Code&gt;
+              </h3>
+              <p className="font-['EKBaumerHeadline',sans-serif] text-[13px] font-normal text-white/38 tracking-[0.04em] uppercase mb-4">
+                Architecte
+              </p>
+              <p className="text-[14px] leading-[1.7] text-white/50 font-light max-w-[88%]">
+                Développement fullstack, solutions SaaS et cybersécurité.
+                Construire l&apos;architecture de demain.
+              </p>
+            </div>
+          </div>
+          {codeServices.map((s) => (
+            <ServiceItem key={s.id} {...s} theme="code" />
           ))}
         </div>
-      </motion.article>
+      </motion.div>
+
+      {/* Footer band */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+        viewport={{ once: true }}
+        className="mx-6 md:mx-16 border border-white/10 border-t-0 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 px-6 md:px-12 py-6"
+      >
+        <span className="font-['EKBaumerHeadline',sans-serif] text-[13px] font-bold tracking-[0.06em] uppercase text-white/28">
+          Branding · Design · Code · Déploiement
+        </span>
+        <a
+          href="#contact"
+          className="inline-flex items-center gap-2.5 bg-[#ED5B53] text-[#161616] font-['EKBaumerHeadline',sans-serif] font-bold text-[13px] tracking-[0.04em] px-6 py-3 rounded-[1px] hover:bg-white transition-colors duration-200 hover:-translate-y-[1px] no-underline"
+        >
+          Discutons de votre projet
+          <svg
+            viewBox="0 0 14 14"
+            fill="none"
+            width="14"
+            height="14"
+            aria-hidden="true"
+          >
+            <path
+              d="M1 7h12M7 1l6 6-6 6"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </a>
+      </motion.div>
+
+      {/* Corner label */}
+      <div className="mx-6 md:mx-16 flex justify-end px-0 pt-3 pb-20">
+        <span className="font-mono text-[10px] text-white/18 tracking-[0.1em]">
+          DripCode Studio © {new Date().getFullYear()}
+        </span>
+      </div>
     </section>
   );
 }
